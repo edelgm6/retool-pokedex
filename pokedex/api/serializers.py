@@ -5,4 +5,5 @@ from pokedex.api.models import Pokemon
 class PokemonSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pokemon
-        fields = ['name','pokeapi_url']
+        fields = ['name','date_added','pokeapi_url']
+        read_only_fields = ['date_added']
