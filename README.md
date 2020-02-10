@@ -16,3 +16,9 @@ REST API to support list, create, and delete operations for a Pokemon list for a
 ```
 
 `pokemon/{pokemon-name}`: `DELETE` single Pokemon from the database
+
+## Running tests
+
+All endpoint functionality (list, create, delete) is covered.
+
+`python manage.py test`
