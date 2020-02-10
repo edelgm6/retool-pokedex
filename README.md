@@ -17,8 +17,21 @@ REST API to support list, create, and delete operations for a Pokemon list for a
 
 `pokemon/{pokemon-name}`: `DELETE` single Pokemon from the database
 
-## Running tests
+## Testing
 
 All endpoint functionality (list, create, delete) is covered.
 
 `python manage.py test`
+
+## Running locally
+
+The app is configured to run on Heroku.
+To run locally, create a `local_settings.py` file and drop into the `api/` directory.
+
+```
+#local_settings.py
+
+DEBUG = True
+
+SECRET_KEY = YOUR_SECRET_KEY
+```

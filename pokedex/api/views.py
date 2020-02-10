@@ -10,7 +10,7 @@ class PokemonList(APIView):
     List all pokemon, or create a new pokemon.
     """
     def get(self, request, format=None):
-        pokemon = Pokemon.objects.all()
+        pokemon = Pokemon.objects.all().order_by('-date_added')
         serializer = PokemonSerializer(pokemon, many=True)
         return Response(serializer.data)
 
