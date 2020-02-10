@@ -23,26 +23,13 @@ class PokemonList(APIView):
 
 class PokemonDetail(APIView):
     """
-    Retrieve, update or delete a pokemon instance.
+    Delete a pokemon instance.
     """
     def get_object(self, name):
         try:
             return Pokemon.objects.get(name=name)
         except Pokemon.DoesNotExist:
             raise Http404
-
-    def get(self, request, name, format=None):
-        pokemon = self.get_object(name)
-        serializer = PokemonSerializer(pokemon)
-        return Response(serializer.data)
-
-    def put(self, request, name, format=None):
-        pokemon = self.get_object(name)
-        serializer = PokemonSerializer(pokemon, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, name, format=None):
         pokemon = self.get_object(name)
