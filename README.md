@@ -9,13 +9,29 @@ REST API to support list, create, and delete operations for a Pokemon list for a
 - Example response:
 ```
 {
+  'pk': '5',
   'name': 'Wartortle',
+  'nickname': 'Warhoss',
   'pokeapi_url': 'http://wartorle.com',
   'date_added': '2020-02-09'
 }
 ```
 
-`pokemon/{pokemon-name}`: `DELETE` single Pokemon from the database
+`pokemon/`
+- `POST` create new Pokemon in the database
+- Example `POST`:
+```
+{
+  'name': 'Wartortle',
+  'nickname': 'Warhoss',
+  'pokeapi_url': 'http://wartorle.com',
+  'date_added': '2020-02-09'
+}
+```
+
+`pokemon/{pk}`: `DELETE` Delete single Pokemon from the database
+
+`pokemon/{pk}`: `PUT` Update single Pokemon in the database
 
 ## Testing
 
