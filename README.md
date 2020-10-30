@@ -1,6 +1,6 @@
 # retool-pokedex
 
-REST API to support list, create, and delete operations for a Pokemon list for a [simple Retool project](https://garrettedel.retool.com/apps/pokemon).
+REST API to support list, create, and delete operations for a Pokemon list for a simple Retool project.
 
 ## Endpoints
 
